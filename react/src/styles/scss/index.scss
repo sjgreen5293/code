@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+// 0_common
+@use "0_common/font" as *;
+@use "0_common/reset" as *;
+@use "0_common/common" as *;
+
+// 레이아웃 스타일
+//@use '1_layout/_layout';
+
+// 2_component
+@use "2_component/_button";
+@use "2_component/_form";
+@use "2_component/_tab";
+@use "2_component/_typography";
+@use "2_component/_item";

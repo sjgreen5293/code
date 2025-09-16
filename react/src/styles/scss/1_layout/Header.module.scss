@@ -1,0 +1,49 @@
+/* src/layouts/PubLayout.module.scss */
+@use "@/styles/scss/globals" as *;
+
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: $white;
+
+  .inner {
+    @include flex($justify: space-between, $align: center);
+    width: $content-base;
+    height: 100%;
+    margin: 0 auto;
+    color: $neutral-650;
+    .logo {
+      @include flex($justify: flex-start, $align: center);
+      @include iconBasic2(
+        $direction: left,
+        $width: 92,
+        $height: 52,
+        $align: left,
+        $imgUrl: $comUrl,
+        $iconName: "_logo_pureskin.svg"
+      );
+      &::before {
+        background-size: 100%;
+      }
+    }
+    .search-area {
+      position: relative;
+      @include flex($justify: flex-start, $align: center);
+    }
+    .nav-link {
+      @include flex($justify: flex-start, $align: center);
+      .link {
+        padding: 1px 24px;
+      }
+    }
+    .util-area {
+      @include flex($justify: flex-start, $align: center, $gap: 0 12px);
+      .util-member {
+        @include flex($justify: flex-start, $align: center, $gap: 0 12px);
+        svg {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

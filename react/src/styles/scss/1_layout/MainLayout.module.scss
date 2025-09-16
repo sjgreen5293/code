@@ -1,0 +1,24 @@
+/* src/layouts/PubLayout.module.scss */
+@use "@/styles/scss/globals" as *;
+
+body {
+  min-width: $content-base;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $white;
+  header {
+    height: 60px;
+  }
+  main {
+    padding-bottom: 64px;
+  }
+  .inner {
+    min-width: $content-base;
+    height: 100%;
+    margin: 0 auto;
+    padding: 96px 0 96px;
+  }
+}

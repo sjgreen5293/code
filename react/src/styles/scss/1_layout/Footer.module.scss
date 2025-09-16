@@ -1,0 +1,90 @@
+/* src/layouts/PubLayout.module.scss */
+@use "@/styles/scss/globals" as *;
+
+.footer {
+  width: 100%;
+  height: 434px;
+  background-color: $neutral-800;
+
+  .inner {
+    @include flex($justify: space-between, $align: flex-start);
+    width: $content-base;
+    height: 100%;
+    margin: 0 auto;
+    padding: 96px 0 96px;
+    color: $neutral-300;
+  }
+  //&-menu {
+  //}
+  &-list {
+    @include flex($justify: flex-start, $align: flex-start);
+    gap: 4px;
+    > li {
+      width: 172px;
+    }
+    .title {
+      color: $neutral-300;
+      text-align: left;
+    }
+    .fnb-list {
+      li,
+      dt,
+      dd {
+        margin-top: 16px;
+      }
+    }
+    .language-area {
+      margin-top: 24px;
+    }
+  }
+  &-util {
+    width: 430px;
+    .title {
+      color: $neutral-300;
+      text-align: left;
+    }
+    .desc {
+      margin-top: 8px;
+      font-size: $fs16;
+    }
+    .email-area {
+      @include flex($justify: flex-start, $align: center);
+      margin-top: 8px;
+    }
+    .btn-email {
+      min-width: 126px;
+      border-radius: 0 16px 16px 0;
+    }
+    .sns-area {
+      @include flex($justify: flex-start, $align: flex-start);
+      margin-top: 32px;
+      li:not(:first-child) {
+        margin-left: 8px;
+      }
+    }
+    .copy-util {
+      @include flex($justify: flex-start, $align: flex-start);
+      margin-top: 32px;
+      .util-link {
+        @include flex($justify: flex-start, $align: flex-start);
+        gap: 10px;
+        margin-left: 8px;
+        li {
+          position: relative;
+          padding-left: 10px;
+          @include arrow(
+            $direction: left,
+            $pseudo: before,
+            $top: 50%,
+            $left: 0,
+            $width: 4px,
+            $thick: 4px,
+            $bgColor: $neutral-300
+          ) {
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+}
