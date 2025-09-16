@@ -1,0 +1,205 @@
+@charset 'utf-8';
+@use "@/styles/scss/globals" as *;
+//@use "sass:list";
+
+:root {
+}
+
+//
+[class^="MuiButtonBase"] {
+  + [class^="MuiButtonBase"] {
+    margin-left: 8px;
+  }
+}
+.btn {
+  &-type1 {
+    padding: 0 12px;
+    @include btn(
+      $bgColor: $primary-500,
+      $color: $white,
+      $bgColor2: $primary-550,
+      $color2: $white,
+      $bgColor3: $primary-600,
+      $color3: $white,
+      $br: 6px
+    );
+  }
+  &-type2 {
+    padding: 0 12px;
+    @include txtType($ftsize: $fs14, $lineHt: 22px, $ftcolor: $white, $tAlign: center);
+    @include btn(
+      $bgColor: $white,
+      $border: 1px solid $primary-500,
+      $color: $primary-500,
+      $bgColor2: $white,
+      $color2: $primary-550,
+      $bgColor3: $white,
+      $color3: $primary-600,
+      $br: 6px
+    );
+  }
+  &-lg {
+    height: 52px;
+    font-size: $fs18;
+  }
+  &-md {
+    height: 36px;
+    border-radius: 6px;
+  }
+  &-sm {
+    height: 36px;
+    border-radius: 6px;
+  }
+  &-sns {
+    &.ico {
+      &-twitter svg {
+        fill: $sky;
+      }
+      &-facebook svg {
+        fill: $blue;
+      }
+      &-linkedIn svg {
+        fill: $purple;
+      }
+      &-youtube svg {
+        fill: $red;
+      }
+    }
+  }
+  &-ico {
+    min-width: initial;
+    padding: initial;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  &-search {
+    @include positionType(
+      $position: absolute,
+      $top: calc(50% - 12px),
+      $right: 5px,
+      $width: 24px,
+      $height: 24px,
+      $idx: 2
+    );
+    svg {
+      fill: $neutral-900;
+    }
+    &:hover,
+    &:focus {
+      svg {
+        fill: $primary-500;
+      }
+    }
+  }
+  &-swiper {
+    @include flex($justify: center, $align: center);
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 28px;
+    border: 0;
+  }
+  &-stop {
+    @include btnIcon(
+      "left",
+      $pseudo: before,
+      $width: 12px,
+      $height: 12px,
+      $align: left,
+      $iconName: btn_stop
+    );
+  }
+  &-start {
+    @include btnIcon(
+      "left",
+      $pseudo: before,
+      $width: 12px,
+      $height: 12px,
+      $align: left,
+      $iconName: btn_start
+    );
+  }
+  &-cart {
+    position: relative;
+    z-index: 15;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid $primary-500;
+    border-radius: 44px;
+    background: url(#{$iconUrl}ico_cart.svg) no-repeat center / 20px auto;
+    &:hover {
+      background: $primary-500 url(#{$iconUrl}ico_cart_on.svg) no-repeat center / 20px auto;
+    }
+  }
+}
+
+// swiper
+.swiper-btn {
+  min-width: auto;
+  padding: 0;
+  border: 0;
+  + .swiper-btn {
+    margin-left: 0;
+  }
+  &-prev {
+    @include bgImg(
+      $width: 44,
+      $height: 44,
+      $imgUrl: $iconUrl,
+      $iconName: "ico_prev.svg",
+      $size: 40px
+    );
+
+    &:hover {
+      background-image: url(#{$iconUrl}ico_prev_on.svg);
+    }
+  }
+  &-next {
+    @include bgImg(
+      $width: 44,
+      $height: 44,
+      $imgUrl: $iconUrl,
+      $iconName: "ico_prev.svg",
+      $size: 40px,
+      $transform: rotate(-180deg)
+    );
+    &:hover {
+      background-image: url(#{$iconUrl}ico_prev_on.svg);
+    }
+  }
+}
+// swiper card type btn
+.card-btn {
+  min-width: auto;
+  padding: 0;
+  border: 0;
+  border: 0;
+  + .card-btn {
+    margin-left: 0;
+  }
+  &-prev {
+    @include bgImg(
+      $width: 52,
+      $height: 52,
+      $imgUrl: $iconUrl,
+      $iconName: "ico_arrow_left.svg",
+      $size: 24px
+    );
+    &:hover {
+      background-image: url(#{$iconUrl}ico_arrow_left_on.svg);
+    }
+  }
+  &-next {
+    @include bgImg(
+      $width: 52,
+      $height: 52,
+      $imgUrl: $iconUrl,
+      $iconName: "ico_arrow_left.svg",
+      $size: 24px,
+      $transform: rotate(-180deg)
+    );
+    &:hover {
+      background-image: url(#{$iconUrl}ico_arrow_left_on.svg);
+    }
+  }
+}

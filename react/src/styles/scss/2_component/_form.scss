@@ -1,0 +1,202 @@
+@charset 'utf-8';
+@use "@/styles/scss/globals" as *;
+//@use "sass:list";
+
+.select {
+  &-list {
+    padding: 5px 12px;
+    &.Mui-selected {
+      background-color: $primary-150;
+    }
+  }
+  &-box {
+    border: 0;
+    border-radius: 6px;
+    .select {
+      &-label {
+        @include blind;
+      }
+      &-input {
+        height: 36px;
+        padding: 0 12px;
+        color: $neutral-300;
+        &.Mui-focused .select-fieldset {
+          border-width: 2px;
+          border-color: $primary-500;
+        }
+      }
+      &-fieldset {
+        top: 0;
+        border: 1px solid $white;
+      }
+      &-icon {
+        transform: rotate(90deg);
+        font-size: 14px;
+        color: $white;
+        &.MuiSelect-iconOpen {
+          transform: rotate(-90deg);
+        }
+      }
+      //&-option {
+      //}
+    }
+  }
+  &-type1 {
+    .select {
+      &-input {
+        height: 48px;
+        padding: 0 20px;
+        color: $neutral-600;
+        background-color: $neutral-200;
+      }
+      &-fieldset {
+        top: 0;
+        border: 0;
+      }
+    }
+  }
+  [class^="MuiButtonBase"] + [class^="MuiButtonBase"] {
+    margin-left: 0;
+  }
+}
+
+//input
+.type {
+  &-1 {
+    position: relative;
+    height: 52px;
+    &::before {
+      @include positionType(
+        $position: absolute,
+        $top: 14px,
+        $left: 15px,
+        $right: 0,
+        $width: 24px,
+        $height: 24px
+      );
+      content: "email";
+      display: inline-block;
+      font-family: "Material Icons Outlined";
+      @include txtType($ftsize: $fs24, $lineHt: 24px, $ftcolor: $neutral-300, $tAlign: left);
+    }
+    label {
+      @include blind;
+    }
+    input {
+      height: 52px;
+      padding: 0 10px 0 52px;
+      @include txtType($ftsize: $fs18, $lineHt: 28px, $ftcolor: $neutral-300, $tAlign: left);
+      &::placeholder {
+        @include txtType($ftsize: $fs18, $lineHt: 28px, $ftcolor: $neutral-300, $tAlign: left);
+      }
+    }
+    fieldset {
+      top: 0;
+      border-color: $neutral-400;
+      border-radius: 16px 0 0 16px;
+    }
+  }
+  &-2 {
+    position: relative;
+    input {
+      width: 164px;
+      height: 36px;
+      padding: 0 30px 0 12px;
+    }
+    fieldset {
+      top: 0;
+      border-color: $neutral-400;
+      border-radius: 6px;
+    }
+    .Mui {
+      &-focused {
+        fieldset {
+          border-color: $neutral-400;
+        }
+      }
+      &-disabled {
+        border-color: $neutral-400;
+        color: $neutral-400;
+        svg {
+          fill: $neutral-400;
+        }
+      }
+    }
+  }
+  &-3 {
+    position: relative;
+    input {
+      width: 164px;
+      height: 36px;
+      padding: 0 30px 0 12px;
+    }
+    fieldset {
+      top: 0;
+      border-color: $neutral-400;
+      border-width: 0 0 1px 0;
+      border-radius: 0;
+    }
+    .Mui {
+      &-focused {
+        fieldset {
+          border-color: $neutral-400;
+        }
+      }
+      &-disabled {
+        border-color: $neutral-400;
+        color: $neutral-400;
+        svg {
+          fill: $neutral-400;
+        }
+      }
+    }
+  }
+}
+
+// popover
+.popover {
+  &-type1 {
+    --Paper-shadow: none !important;
+    background: transparent;
+    .inner {
+      position: relative;
+      box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.2);
+      margin: 10px 2px 5px;
+      padding: 10px 12px;
+      border: 1px solid $grey-300;
+      border-radius: 8px;
+
+      &::before {
+        content: "";
+        @include positionType(
+          $position: absolute,
+          $top: -6px,
+          $left: 50%,
+          $right: 0,
+          $transform: rotate(45deg),
+          $width: 10px,
+          $height: 10px,
+          $idx: 2
+        );
+        border: 1px solid $grey-300;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        background-color: $white;
+      }
+    }
+  }
+}
+
+// pagination
+.MuiPagination {
+  &-root {
+    &.center {
+      margin: 0 auto;
+      .Mui-selected {
+        font-weight: $fw700;
+        color: $primary-500;
+        background-color: $primary-150;
+      }
+    }
+  }
+}
